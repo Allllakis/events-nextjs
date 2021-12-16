@@ -7,6 +7,7 @@ import AddressIcon from "../icons/address-icon";
 import ArrowRightIcon from "../icons/arrow-right-icon";
 
 const EventItem = (props) => {
+  
   const { image, title, date, location, id } = props;
 
   const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
@@ -15,7 +16,7 @@ const EventItem = (props) => {
     year: "numeric",
   });
 
-  const formattedAddress = location.replace(', ', '\n');
+  // const formattedAddress = location.replace(', ', '\n');
   const exploreLink = `/events/${id}`;
 
   return (
@@ -30,7 +31,7 @@ const EventItem = (props) => {
           </div>
           <div className={classes.address}>
             <AddressIcon />
-            <address>{formattedAddress}</address>
+            <address>{location}</address>
           </div>
         </div>
         <div className={classes.actions}>

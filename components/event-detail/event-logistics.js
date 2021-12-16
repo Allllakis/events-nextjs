@@ -5,13 +5,14 @@ import classes from './event-logistics.module.css';
 
 function EventLogistics(props) {
   const { date, address, image, imageAlt } = props;
+  console.log(props)
 
   const humanReadableDate = new Date(date).toLocaleDateString('en-US', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
   });
-  const addressText = address.replace(', ', '\n');
+  // const addressText = address.replace(', ', '\n');
 
   return (
     <section className={classes.logistics}>
@@ -23,7 +24,7 @@ function EventLogistics(props) {
           <time>{humanReadableDate}</time>
         </LogisticsItem>
         <LogisticsItem icon={AddressIcon}>
-          <address>{addressText}</address>
+          <address>{address}</address>
         </LogisticsItem>
       </ul>
     </section>
